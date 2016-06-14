@@ -1,0 +1,24 @@
+{
+  "name": "Angular-Fire",
+  "homepage": "https://github.com/mei18/Angular-Fire",
+  "authors": [
+    "Melanie Liang <melly.strearshy@gmail.com>"
+  ],
+  "description": "Small demo project with AngularJS, Firebase and AngularFire",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.6",
+    "angular-resource": "^1.5.6",
+    "angular-route": "^1.5.6",
+    "angularfire": "^2.0.1"
+  }
+}
