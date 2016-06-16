@@ -1,6 +1,4 @@
-angular.module('videoGames', ['videoGames.controllers', 'videoGames.services', 'ngRoute','firebase'])
-
-.value('fbRef', 'https://prograinteractiva.firebaseio.com/');
+angular.module('videoGames', ['videoGames.controllers', 'videoGames.factories', 'ngRoute','firebase'])
 
 .config(function($routeProvider) {
 	var resolveGames = {
@@ -11,21 +9,24 @@ angular.module('videoGames', ['videoGames.controllers', 'videoGames.services', '
 
 	$routeProvider
 		.when('/', {
-			controller: 'GameListController as gameList',
-			templateUrl: 'views/list.html',
-			resolve: resolveGames
+			templateUrl: 'views/home.html'
 		})
 		.when('/games', {
-			controller: 'EditGameController as editGame',
-			templateUrl: 'views/details.html',
-			resolve: resolveGames
+			controller: 'listController as list',
+			templateUrl: 'views/games.html'
 		})
-		.when('/details', {
-			controller: 'NewGameController as editGame',
-			templateUrl: 'views/details.html',
-			resolve: resolveGames
+		.when('/game: gameId', {
+			templateUrl: 'views/game.html'
 		})
 		.otherwise({
 			redirecTo: '/'
 		});
+		 // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyCYf24HUySojyf2ZBQ_BQlJuJ_P8VfxSHk",
+		    authDomain: "prograinteractiva.firebaseapp.com",
+		    databaseURL: "https://prograinteractiva.firebaseio.com",
+		    storageBucket: "prograinteractiva.appspot.com",
+		  };
+		  firebase.initializeApp(config);
 });
