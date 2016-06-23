@@ -4,3 +4,13 @@
 		Name: {{game.name}}, Price: {{game.price}}
 	</li>
 </ul>
+
+<h2>Add a new game</h2>
+
+<form ng-submit="list.add()">
+	<input type="number" name="" ng-model="list.game.id">
+	<input type="text" name="" ng-model="list.game.name">
+	<input type="money" name="" ng-model="list.game.price">
+
+	<input type="submit" name="" value="Save">
+</form>
